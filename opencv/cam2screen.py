@@ -15,12 +15,12 @@ while(True):
 
     # Display the resulting frame
     cv2.imshow('frame',gray)
-    cv2.waitKey(1)
-
+    key=cv2.waitKey(1)
+    if key == 27:
+        break
     cnt += 1
     telep = time.time() - tstart
     fps = cnt / telep
-    # cv2.waitKey(30)
     print ( fps )
 
 # When everything done, release the capture
