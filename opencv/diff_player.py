@@ -22,10 +22,12 @@ class DiffPlayer:
  
         if isOn and not on:
             del self.notesOn[i]
-       
+            return 0
+
         elif not isOn and on:
  
             val2=math.floor(min(127,(80*max(val[0],val[1],val[2])/thresh)))
             print(i,val2)
             self.client.send_message("/hit", [i, val2])
             self.notesOn[i] = True
+            return val2
