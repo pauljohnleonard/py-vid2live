@@ -6,7 +6,7 @@ min_note = 30
 max_note = 100
 n_note = max_note-min_note
 
-thresh = 80
+thresh = 40
 
 
 mbpath=sys.path[0] + "/../../MusicBox/src"
