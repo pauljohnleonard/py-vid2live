@@ -34,3 +34,4 @@ class PythonTemplate:
     ## Process function with USB output
     def process(self, inframe, outframe):
         # Get the next camera image (may block until it is captured) and convert it to OpenCV BGR (for color output):
+        pass
