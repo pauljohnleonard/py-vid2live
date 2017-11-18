@@ -1,36 +1,36 @@
-# Files system mode:
+# Files system mode to pu stuff on the JeVois
 
-Make sure the web cam is not in use then
+You need to make sure camera is not streaming 
 
-# OSX
+## OSX
 
 ```
 echo usbsd > /dev/cu.usbmodem1463 
 ```
 
 
-# VirtualHost:
-
-
-##  Devel  
-
-jevois-deamon --serout=All
-
-OR 
-
-setup the script.cfg 
-
-
-### Mount file system
+## VirtualHost:
 
 jevois-usbsd  start
 jevois-usbsd  stop
 
-# To start without camera
+
+
+
+# Running programms Host development 
+
+jevois-deamon 
+
+
+## To start turn off the video output stream
 
 streamoff
 setmapping2 YUYV 320 240 30.0 PJL MusicBox
 streamon
+
+
+
+# Running programms Host development
 
 
 
@@ -48,4 +48,4 @@ setpar serout Hard
 # Arduino mode
 
 setmapping2 YUYV 320 240 30.0 PJL MusicBox
-streamon
+streamon 
