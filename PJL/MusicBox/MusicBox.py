@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 from diff_player import DiffPlayer
 
-class PythonSandbox:
+class MusicBox:
     # ###################################################################################################
     ## Constructor
     def __init__(self):
@@ -21,7 +21,7 @@ class PythonSandbox:
 
     # ###################################################################################################
     ## Process function with USB output
-    def process(self, inframe, outframe):
+    def process(self, inframe, outframe=None):
         self._myProcess(inframe,outframe)
 
 

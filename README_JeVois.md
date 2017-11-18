@@ -9,17 +9,16 @@ echo usbsd > /dev/cu.usbmodem1463
 ```
 
 
-
-# Host:
-------
+# VirtualHost:
 
 
 ##  Devel  
 
 jevois-deamon --serout=All
 
+OR 
 
-##  Platfrom
+setup the script.cfg 
 
 
 ### Mount file system
@@ -27,6 +26,11 @@ jevois-deamon --serout=All
 jevois-usbsd  start
 jevois-usbsd  stop
 
+# To start without camera
+
+streamoff
+setmapping2 YUYV 320 240 30.0 PJL MusicBox
+streamon
 
 
 
@@ -41,3 +45,7 @@ setpar serlog None
 setpar serout Hard
 
 
+# Arduino mode
+
+setmapping2 YUYV 320 240 30.0 PJL MusicBox
+streamon
