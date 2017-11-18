@@ -8,7 +8,7 @@ class PythonSandbox:
     ## Constructor
     def __init__(self):
         # Instantiate a JeVois Timer to measure our processing framerate:
-        self.timer = jevois.Timer("sandbox", 100, jevois.LOG_INFO)
+        self.timer = jevois.Timer("sandbox", 1000, jevois.LOG_INFO)
         self.old_frame=None
         self.player=DiffPlayer()
 
@@ -22,7 +22,6 @@ class PythonSandbox:
         
         w=frame.shape[1]
         h=frame.shape[0]
-
 
         nx=12
         dx=w//nx

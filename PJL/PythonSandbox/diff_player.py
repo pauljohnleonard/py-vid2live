@@ -1,4 +1,6 @@
 import math
+import libjevois as jevois
+
 
 min_note = 30
 max_note = 100
@@ -23,6 +25,7 @@ class DiffPlayer:
         if isOn:
             if not on:
                 del self.notesOn[i]
+                jevois.sendSerial("n"+str(i)+"_0\n")
                 return 0
             else:
                 return self.notesOn[i]
@@ -34,6 +37,7 @@ class DiffPlayer:
                 #print(i,val2)
 
                 self.notesOn[i] = val2
+                jevois.sendSerial("n"+str(i)+"_"+str(val2)+"\n")
                 return val2
             else:
                 return 0
