@@ -3,16 +3,14 @@ import cv2
 import time
 import diff_player
 
-from pythonosc import udp_client
-
-        
-client = udp_client.SimpleUDPClient("127.0.0.1",7000)
-      
 
 player = diff_player.DiffPlayer()
 
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(2)
+time.sleep(1)
+
+
 ret, old_frame = cap.read()
 
 w=old_frame.shape[1]
@@ -36,7 +34,8 @@ cnt = 0
 
 while(1):
     ret, frame = cap.read()
-    diff=cv2.addWeighted(frame,1.0,old_frame,-1.0,0)
+    # diff=cv2.addWeighted(frame,1.0,old_frame,-1.0,0)
+    diff=cv2.absdiff(frame,old_frame)
     disp=frame.copy()
 
     for i in range(nx):

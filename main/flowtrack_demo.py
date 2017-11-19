@@ -149,4 +149,4 @@ class TrackPlayerApp:
 
 if __name__ == '__main__':
 
-    TrackPlayerApp(video_src=0,record=False).run()
+    TrackPlayerApp(video_src=2,record=False).run()
