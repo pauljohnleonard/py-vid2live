@@ -4,8 +4,6 @@ Keys
 ----
 ESC - exit
 '''
-
-from time import clock
 import numpy as np
 import cv2
 import colorsys
@@ -56,7 +54,7 @@ class Track:
 
         if not self.isOn and on:
             self.isOn=True
-            vel = 127 # min(127,math.floor(50*dist/note_on_dist))
+            vel = 127
             self.player.on(self.pts[-1],(dx,dy),vel,self.key)
  
         elif self.isOn and not on:
@@ -149,4 +147,4 @@ class TrackPlayerApp:
 
 if __name__ == '__main__':
 
-    TrackPlayerApp(video_src=2,record=False).run()
+    TrackPlayerApp(video_src=0,record=False).run()

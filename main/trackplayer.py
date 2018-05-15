@@ -3,10 +3,10 @@ import math
 import sys
 import time
 
-mbpath=sys.path[0] + "/../../MusicBox/src"
+mbpath=sys.path[0] + "/../../MusicBox/src/MB"
 
 sys.path.append(mbpath)
-from MB import MBmusic,MBmidi,MB
+from MB import music,midi,setup
 from MB.players import *
 
 
@@ -22,10 +22,10 @@ class TrackPlayer:
 
     def __init__(self):
         self.notesOn={}
-        mid = MBmidi.MidiEngine()
+        mid = midi.MidiEngine()
         # seq = MBmusic.Sequencer()   
-        dev = mid.open_midi_out(MB.MIDI_OUT_NAMES)
-        self.inst = MBmidi.Instrument(dev.out,2)
+        dev = mid.open_midi_out(setup.MIDI_OUT_NAMES)
+        self.inst = midi.Instrument(dev.out,2)
 
     def on(self, pos, delta, vel, key):
 

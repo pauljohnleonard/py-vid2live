@@ -12,7 +12,7 @@ thresh = 40
 mbpath=sys.path[0] + "/../../MusicBox/src"
 
 sys.path.append(mbpath)
-from MB import MBmusic,MBmidi,MB
+from MB import music,midi,setup
 from MB.players import *
 
 
@@ -22,10 +22,10 @@ class DiffPlayer:
     def __init__(self):
       
         self.notesOn={}
-        mid = MBmidi.MidiEngine()
+        mid = midi.MidiEngine()
         # seq = MBmusic.Sequencer()   
-        dev = mid.open_midi_out(MB.MIDI_OUT_NAMES)
-        self.inst = MBmidi.Instrument(dev.out,13)
+        dev = mid.open_midi_out(setup.MIDI_OUT_NAMES)
+        self.inst = midi.Instrument(dev.out,13)
 
     def process(self,i,val):
         vvv = val[0]+val[1]+val[2]

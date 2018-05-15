@@ -7,7 +7,7 @@ import diff_player
 player = diff_player.DiffPlayer()
 
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(0)
 time.sleep(1)
 
 
