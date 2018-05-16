@@ -2,6 +2,8 @@ import numpy as np
 import cv2
 import time
 
+
+
 cap = cv2.VideoCapture(0)
 tstart = time.time()
 cnt = 0
@@ -10,7 +12,7 @@ downSamp=4
 def lowCap():
     ret, frame = cap.read()
 
-    for i in xrange(downSamp):
+    for i in range(downSamp):
         frame = cv2.pyrDown(frame)
 
     return frame
