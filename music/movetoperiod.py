@@ -16,7 +16,7 @@ cbuff = CircularBuffer(n=nhist,dtype='complex_')
 
 cap = cv2.VideoCapture(0)
 cnt = 0
-downSamp=2
+downSamp=4
 fpsDisp=0
 alpha=0.05
 cpu=0
@@ -59,6 +59,10 @@ while(1):
     flow = cv2.calcOpticalFlowFarneback(prvs,next, None, 0.5, 3, 15, 3, 5, 1.2, 0)
 
     dir=flow.sum(axis=(0,1))
+
+    dirC=complex(dir[0],dir[1])
+
+    cbuff.append(dirC)
 
     mag, ang = cv2.cartToPolar(flow[...,0], flow[...,1])
     hsv[...,0] = ang*180/np.pi/2
