@@ -1,9 +1,9 @@
-from pythonosc import udp_client
+
 import math
 import sys
-import time
 
-mbpath=sys.path[0] + "/../../MusicBox/src/MB"
+
+mbpath=sys.path[0] + "/../../MusicBox/src"
 
 sys.path.append(mbpath)
 from MB import music,midi,setup
@@ -29,7 +29,7 @@ class TrackPlayer:
 
     def on(self, pos, delta, vel, key):
 
-        pitch = min_note + ( math.floor(pos[0]/self.rect[0]*n_note) )  
+        pitch =int( min_note + ( math.floor(pos[0]/self.rect[0]*n_note) ) )
     
         print( pos )
         self.inst.note_on(pitch, vel)

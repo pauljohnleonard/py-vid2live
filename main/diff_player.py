@@ -1,4 +1,3 @@
-from pythonosc import udp_client
 import math
 import sys
 
@@ -43,8 +42,8 @@ class DiffPlayer:
         elif not isOn:
             if on:
  
-                val2=math.floor(min(127,(80*max(val[0],val[1],val[2])/thresh)))
-                print(i,val2)
+                val2=int(math.floor(min(127,(80*max(val[0],val[1],val[2])/thresh))))
+              //  print(i,val2)
 
                 self.inst.note_on(i, val2)
                 self.notesOn[i] = val2
